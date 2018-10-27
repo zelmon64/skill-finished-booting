@@ -1,4 +1,4 @@
-## ZZZ Finished Booting Skill
+## Skill Finished Booting
 Skill to determine when Mycroft AI has finished booting up.
 
 ## Description 

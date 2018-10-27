@@ -1,4 +1,4 @@
-#~ zzz-finished-booting-skill - A simple skill to know when mycroft finishes booting up.
+#~ skill-finished-booting - A simple skill to know when mycroft finishes booting up.
 #~ Copyright (C) 2018  zelmon64
 #~ Github - https://github.com/zelmon64
 
@@ -18,11 +18,11 @@
 from mycroft import MycroftSkill
 from mycroft.util.log import LOG
 
-class zzzFinishedBootingSkill(MycroftSkill):
+class FinishedBootingSkill(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor
     def __init__(self):
-        super(zzzFinishedBootingSkill, self).__init__(name="zzzFinishedBootingSkill")
+        super(FinishedBootingSkill, self).__init__(name="FinishedBootingSkill")
     
     def initialize(self):
         self.add_event("mycroft.skills.initialized", self.handle_boot_finished)
@@ -35,4 +35,4 @@ class zzzFinishedBootingSkill(MycroftSkill):
 # The "create_skill()" method is used to create an instance of the skill.
 # Note that it's outside the class itself.
 def create_skill():
-    return zzzFinishedBootingSkill()
+    return FinishedBootingSkill()
