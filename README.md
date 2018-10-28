@@ -11,3 +11,7 @@ to load and announces that Mycroft has finished booting up.
 
 ## Credits 
 zelmon64
+
+fortwally
+
+JarbasAI
