@@ -29,7 +29,14 @@ class FinishedBootingSkill(MycroftSkill):
         LOG.debug('add event handle boot finished')
     
     def handle_boot_finished(self):
-        self.speak_dialog('finished.booting')
+        if self.base_conf:
+            mp3_file = self.base_conf.get('startup_mp3', None)
+        if self.config:
+            mp3_file = self.config.get('startup_mp3', mp3_file)
+        if mp3_file:
+            self.util.play_mp3(mp3_file)
+        else:
+            self.speak_dialog('finished.booting')
         LOG.debug('finished booting')
 
 # The "create_skill()" method is used to create an instance of the skill.
