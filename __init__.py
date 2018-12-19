@@ -27,12 +27,11 @@ class FinishedBootingSkill(MycroftSkill):
     def initialize(self):
         self.add_event("mycroft.skills.initialized", self.handle_boot_finished)
         LOG.debug('add event handle boot finished')
-    
+        self.base_conf = config.get('FinishedBootingSkill')
+        
     def handle_boot_finished(self):
         if self.base_conf:
             mp3_file = self.base_conf.get('startup_mp3', None)
-        if self.config:
-            mp3_file = self.config.get('startup_mp3', mp3_file)
         if mp3_file:
             self.util.play_mp3(mp3_file)
         else:
