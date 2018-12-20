@@ -18,7 +18,7 @@
 from mycroft import MycroftSkill
 from mycroft.util.log import LOG
 from mycroft.configuration import ConfigurationManager
-from mycroft.util.play_mp3 import play_mp3
+from mycroft.util import play_mp3
 
 class FinishedBootingSkill(MycroftSkill):
 
