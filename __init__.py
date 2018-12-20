@@ -17,16 +17,18 @@
 
 from mycroft import MycroftSkill
 from mycroft.util.log import LOG
+from mycroft.configuration import ConfigurationManager
 
 class FinishedBootingSkill(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor
     def __init__(self):
         super(FinishedBootingSkill, self).__init__(name="FinishedBootingSkill")
-    
+
     def initialize(self):
         self.add_event("mycroft.skills.initialized", self.handle_boot_finished)
         LOG.debug('add event handle boot finished')
+        config = ConfigurationManager.get()
         self.base_conf = config.get('FinishedBootingSkill')
         
     def handle_boot_finished(self):
