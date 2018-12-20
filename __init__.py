@@ -18,6 +18,7 @@
 from mycroft import MycroftSkill
 from mycroft.util.log import LOG
 from mycroft.configuration import ConfigurationManager
+from mycroft.util.play_mp3 import play_mp3
 
 class FinishedBootingSkill(MycroftSkill):
 
@@ -35,7 +36,7 @@ class FinishedBootingSkill(MycroftSkill):
         if self.base_conf:
             mp3_file = self.base_conf.get('startup_mp3', None)
         if mp3_file:
-            self.util.play_mp3(mp3_file)
+            self.play_mp3(mp3_file)
         else:
             self.speak_dialog('finished.booting')
         LOG.debug('finished booting')
