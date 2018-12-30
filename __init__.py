@@ -32,13 +32,13 @@ class FinishedBootingSkill(MycroftSkill):
         config = ConfigurationManager.get()
         self.base_conf = config.get('FinishedBootingSkill')
         if self.base_conf:
-          mp3_file = self.base_conf.get('startup_mp3', None)
+          self.mp3_file = self.base_conf.get('startup_mp3', None)
         else:
-          mp3_file = None
+          self.mp3_file = None
 
     def handle_boot_finished(self):
-        if mp3_file:
-            play_mp3(mp3_file)
+        if self.mp3_file:
+            play_mp3(self.mp3_file)
         else:
             self.speak_dialog('finished.booting')
         LOG.debug('finished booting')
