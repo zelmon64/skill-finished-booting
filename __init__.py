@@ -30,9 +30,9 @@ class FinishedBootingSkill(MycroftSkill):
         self.add_event("mycroft.skills.initialized", self.handle_boot_finished)
         LOG.debug('add event handle boot finished')
         config = ConfigurationManager.get()
-        self.base_conf = config.get('FinishedBootingSkill')
-        if self.base_conf:
-          self.mp3_file = self.base_conf.get('startup_mp3', None)
+        base_conf = config.get('FinishedBootingSkill')
+        if base_conf:
+          self.mp3_file = base_conf.get('startup_mp3', None)
         else:
           self.mp3_file = None
 
