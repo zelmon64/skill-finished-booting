@@ -2,7 +2,7 @@
 Skill to determine when Mycroft AI has finished booting up.
 
 ## About 
-With this skill Mycroft will say when the boot up period has finished and is ready to receive commands.
+With this skill Mycroft will say "finished booting" or play a startup sound when the boot up period has finished and is ready to receive commands. 
 
 ## Examples 
 
@@ -12,5 +12,11 @@ zelmon64 (@zelmon64), Wally Fort (@fortwally), JarbasAI (@JarbasAI)
 ## Category
 **Configuration**
 
-## Tags
+You may optionally add a configuration stanza to mycroft.conf to play an mp3 file instead of speaking:
+```
+  "FinishedBootingSkill": {
+    "startup_mp3": "/home/pi/chimes-1948.mp3"
+  }
+```
 
+## Tags
