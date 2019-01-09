@@ -1,4 +1,4 @@
-# <img src='https://rawgithub.com/FortAwesome/Font-Awesome/master/advanced-options/raw-svg/solid/flag-checkered.svg' card_color='#40DBB0' width='50' height='50' style='vertical-align:bottom'/> Finished Booting Skill
+# <img src='https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/flag-checkered.svg' card_color='#40DBB0' width='50' height='50' style='vertical-align:bottom'/> Finished Booting Skill
 Skill to determine when Mycroft AI has finished booting up.
 
 ## About 
