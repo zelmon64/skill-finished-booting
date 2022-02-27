@@ -29,7 +29,11 @@ class FinishedBootingSkill(MycroftSkill):
         LOG.debug('add event handle boot finished')
     
     def handle_boot_finished(self):
-        self.speak_dialog('finished.booting')
+        name = self.config_core.get("listener", {}).get("wake_word",
+                                                        "mycroft")
+        name = name.lower().replace("hey ", "")
+        
+        self.speak_dialog('finished.booting',{"name": name})
         LOG.debug('finished booting')
 
 # The "create_skill()" method is used to create an instance of the skill.
